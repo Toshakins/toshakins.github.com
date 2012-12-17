@@ -3,20 +3,31 @@
 	ul {
 		display: block;
 	}
+	@selector-size: 0.75em;
+	@selector-color: lighten(gray, 40%);
 	li {
+		overflow: visible;
 		float: right;
-		width: 0.75em;
-		height: 0.75em;
-		background-color: #16F555;
+		width: @selector-size;
+		height: @selector-size;
+		background-color: @selector-color;
 		margin: 0 2px;
+		list-style-type: none;
+		cursor: pointer;
+		border: 2px solid black;
+	}
+}
+.wrapper {
+	max-width: inherit;
+	max-height: inherit;
+	margin: auto;
+	li {
 		list-style-type: none;
 	}
 }
-.wrapper li {
-	list-style-type: none;
-}
 
-.carousel {
-	width: 50%;
+.slider{
+	max-width: 500px;
+	max-height: 50px;
 	margin: auto;
 }
