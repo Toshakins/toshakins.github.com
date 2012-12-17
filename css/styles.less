@@ -1,10 +1,15 @@
+@selector-size: 0.75em;
+@selector-color: red;
+
 .selection {
 	float: right;
 	ul {
 		display: block;
+		z-index: 10;
+		:hover {
+			background-color: lighten(@selector-color, 30%);
+		}
 	}
-	@selector-size: 0.75em;
-	@selector-color: lighten(gray, 40%);
 	li {
 		overflow: visible;
 		float: right;
@@ -15,6 +20,10 @@
 		list-style-type: none;
 		cursor: pointer;
 		border: 2px solid black;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
 	}
 }
 .wrapper {
