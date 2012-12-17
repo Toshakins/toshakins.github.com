@@ -11,7 +11,9 @@ $.fn.slider = function () {
         $items.each(function (index) {
             $selectorBox.append('<li><a href=#' + 
                 ($items.length - index - 1) + '></a></li>');
+            $items.css('display', 'none');
         });
+        $items.eq(currentPage).css('display', 'list-item');
         var $selectors =  $selectorBox.find('> li');
         $selectors.each(function (index) {
             $(this).click(function () {
