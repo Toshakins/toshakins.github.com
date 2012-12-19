@@ -1,4 +1,4 @@
-$.fn.slider = function () {
+$.fn.slider = function (slideDelay) {
     return this.each(function() {
         var $wrapper = $('> div', this).css('overflow', 'hidden'),
         $slider = $wrapper.find('> ul'),
@@ -11,8 +11,16 @@ $.fn.slider = function () {
         $items.each(function (index) {
             $selectorBox.append('<li><a href=#' + 
                 ($items.length - index - 1) + '></a></li>');
-            $items.css('display', 'none');
+            $(this).css('display', 'none');
         });
+        //TODO:
+        //need add option 'play'
+        //on click play disabled
+        //fadeIO, delay, 'play' enabled
+        setInterval((function () {
+                    $items.eq(currentPage).fadeOut("slow");
+                    $items.eq(currentPage = (++currentPage % $items.length)).fadeIn("slow");
+                }), slideDelay);
         $items.eq(currentPage).css('display', 'list-item');
         var $selectors =  $selectorBox.find('> li');
         $selectors.each(function (index) {
@@ -22,6 +30,7 @@ $.fn.slider = function () {
                     $items.eq(currentPage).fadeOut("slow");
                     $items.eq(choice).fadeIn("slow");
                     currentPage = choice;
+                    $(this).delay(slideDelay);
                 };
             });
         });
@@ -29,5 +38,5 @@ $.fn.slider = function () {
 };
 
 $(function () {
-  $('.slider').slider();
+  $('.slider').slider(2000);
 });
