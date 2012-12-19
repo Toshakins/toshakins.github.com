@@ -13,18 +13,18 @@ $.fn.slider = function (slideDelay) {
                 ($items.length - index - 1) + '></a></li>');
             $(this).css('display', 'none');
         });
-        //TODO:
-        //need add option 'play'
-        //on click play disabled
-        //fadeIO, delay, 'play' enabled
-        setInterval((function () {
-                    $items.eq(currentPage).fadeOut("slow");
-                    $items.eq(currentPage = (++currentPage % $items.length)).fadeIn("slow");
-                }), slideDelay);
+        function player() {
+            return setInterval((function () {
+                $items.eq(currentPage).fadeOut("slow");
+                $items.eq(currentPage = (++currentPage % $items.length)).fadeIn("slow");
+            }), slideDelay);
+        }
+        var stop = player();
         $items.eq(currentPage).css('display', 'list-item');
         var $selectors =  $selectorBox.find('> li');
         $selectors.each(function (index) {
             $(this).click(function () {
+                clearInterval(stop);
                 var choice = parseInt($(this).find('>a').attr('href').match('[^#/]+$'));
                 if (choice != currentPage) {
                     $items.eq(currentPage).fadeOut("slow");
@@ -32,11 +32,12 @@ $.fn.slider = function (slideDelay) {
                     currentPage = choice;
                     $(this).delay(slideDelay);
                 };
+                stop = player();
             });
         });
     });
 };
 
 $(function () {
-  $('.slider').slider(2000);
+  $('.slider').slider(5000);
 });
