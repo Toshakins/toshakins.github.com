@@ -1,13 +1,11 @@
 @selector-size: 0.75em;
-@selector-color: red;
+@selector-color: grey;
+@on-select-color: orange;
 
 .selection {
 	float: right;
 	ul {
 		display: block;
-		:hover {
-			background-color: lighten(@selector-color, 30%);
-		}
 	}
 	li {
 		overflow: visible;
@@ -21,23 +19,39 @@
 		border: 2px solid black;
 	}
 	.selected {
-		background-color: orange;
+		background-color: @on-select-color;
 	}
 }
+
+@w:800px;
+@h:50px;
+@header-height: 80px;
+
+.sizes () {
+	width: @w;
+	height: @h;
+	min-height: @h;
+	min-width: @w;
+	max-width: @w;
+	max-height: @h;
+}
+
 .wrapper {
-	max-width: inherit;
-	max-height: inherit;
+	.sizes;
 	ul {
+		text-align: center;
 		li {
 			list-style-type: none;
 		}
 	}
 }
 
-@w:500px;
-@h:50px;
 .slider{
-	max-width: @w;
-	max-height: @h;
+	.sizes;
 	margin: auto;
+}
+
+.header {
+	background: #000;
+	height: @header-height;
 }
