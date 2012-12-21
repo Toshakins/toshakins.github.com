@@ -13,7 +13,6 @@ $.fn.slider = function (slideDelay) {
                 ($items.length - index - 1) + '></a></li>');
             $(this).css('display', 'none');
         });
-        //save wrapper params for IE8
         function nextFrame (choice) {
             //eq hack cause of <li> output inproper order
             $selectors.eq($items.length - currentPage - 1).removeClass('selected');
@@ -47,5 +46,5 @@ $.fn.slider = function (slideDelay) {
 };
 
 $(function () {
-  $('.slider').slider(2000);
+  $('.slider').slider(5000);
 });
