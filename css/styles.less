@@ -1,27 +1,4 @@
-@selector-size: 0.75em;
-@selector-color: grey;
-@on-select-color: orange;
-
-.selection {
-	float: right;
-	ul {
-		display: block;
-	}
-	li {
-		overflow: visible;
-		float: right;
-		width: @selector-size;
-		height: @selector-size;
-		background-color: @selector-color;
-		margin: 0 2px;
-		list-style-type: none;
-		cursor: pointer;
-		border: 2px solid black;
-	}
-	.selected {
-		background-color: @on-select-color;
-	}
-}
+@import "slider.less";
 
 @w:800px;
 @h:50px;
@@ -30,10 +7,6 @@
 .sizes () {
 	width: @w;
 	height: @h;
-	min-height: @h;
-	min-width: @w;
-	max-width: @w;
-	max-height: @h;
 }
 
 .wrapper {
@@ -54,5 +27,4 @@
 .header {
 	background: #000;
 	height: @header-height;
-	width: 100%;
 }
