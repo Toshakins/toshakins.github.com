@@ -13,7 +13,7 @@ $.fn.slider = function (slideDelay) {
                 ($items.length - index - 1) + '></a></li>');
             $(this).css('display', 'none');
         });
-        function nextFrame (choice) {
+        function nextSlide (choice) {
             //eq hack cause of <li> output inproper order
             $selectors.eq($items.length - currentPage - 1).removeClass('selected');
             $selectors.eq($items.length - choice - 1).addClass('selected');
@@ -23,7 +23,7 @@ $.fn.slider = function (slideDelay) {
         };
         function player() {
             return setInterval((function () {
-                nextFrame((currentPage + 1) % $items.length);
+                nextSlide((currentPage + 1) % $items.length);
             }), slideDelay);
         };
         var breaker = player();
@@ -36,7 +36,7 @@ $.fn.slider = function (slideDelay) {
                 clearInterval(breaker);
                 var choice = parseInt($(this).find('>a').attr('href').match('[^#/]+$'));
                 if (choice != currentPage) {
-                    nextFrame(choice);
+                    nextSlide(choice);
                     $(this).delay(slideDelay);
                 };
                 breaker = player();
