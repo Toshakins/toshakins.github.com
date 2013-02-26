@@ -64,27 +64,6 @@
                     <p class="fragment">Нет примитивных конструкций</p>
                     <p class="fragment">Не выполняется DRY
                     <p class="fragment">Трудно поддерживать код</p>
-                    <div class="wannabe">
-                        <div><pre><code>
-/* Сейчас */
-div {
-    color: #170;
-}
-div p {
-    color: #20dd00;
-}
-                        </code></pre></div>
-                        <div><pre><code class="less">
-//Хотелось бы
-@tone: #170;
-div {
-    background-color: @tone;
-    p {
-    background-color: lighten(@tone, 20%);
-    }
-}
-                        </code></pre></div>
-                    </div>
                 </section>
                 <section>
                     <h1>Выход есть!</h1>
@@ -100,6 +79,36 @@ div {
                 <section data-state="start">
                     <h1 class="header">Вы готовы?</h1>
                     <!-- <div class="header">lorem ipsum</div> -->
+                </section>
+                <section>
+                    <h2>Переменные <br>&amp;<br> вложенность</h2>
+                <pre><code>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+//LESS
+@tone: #170;
+div {
+    color: @tone;
+    p {
+    color: lighten(@tone, 20%);
+    }
+}
+                                </td>
+                                <td class="selected">
+/* CSS */
+div {
+    color: #170;
+}
+div p {
+    color: #20dd00;
+}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </code></pre>
                 </section>
 
             </div>

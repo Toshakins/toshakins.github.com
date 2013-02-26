@@ -17,7 +17,8 @@ $.fn.slider = function (slideDelay) {
             //eq hack cause of <li> output inproper order
             $selectors.eq($items.length - currentPage - 1).removeClass('selected');
             $selectors.eq($items.length - choice - 1).addClass('selected');
-            $items.eq(currentPage).fadeOut("slow", (function() {$items.eq(choice).fadeIn("slow");}));
+            $items.eq(currentPage).fadeOut("slow", 
+                (function() {$items.eq(choice).fadeIn("slow");}));
             currentPage = choice;
         };
         function player() {
