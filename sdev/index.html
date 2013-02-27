@@ -82,11 +82,11 @@
                 </section>
                 <section>
                     <h2>Переменные <br>&amp;<br> вложенность</h2>
-                <pre><code>
+                <pre><code class="doubled">
                     <table>
                         <tbody>
                             <tr>
-                                <td>
+                                <td class="less">
 //LESS
 @tone: #170;
 div {
@@ -96,7 +96,7 @@ div {
     }
 }
                                 </td>
-                                <td class="selected">
+                                <td class="compiled">
 /* CSS */
 div {
     color: #170;
@@ -109,6 +109,36 @@ div p {
                         </tbody>
                     </table>
                 </code></pre>
+                </section>
+                <section>
+                    <h2>Примеси</h2>
+                <pre><code class="doubled">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="less">
+//LESS
+.borders(@size) {
+            border-radius: @size;
+    -webkit-border-radius: @size;
+}
+
+section {
+    .borders(5px);
+}
+                                    </td>
+                                    <td class="compiled">
+/* CSS */
+section {
+            border-radius: 5px;
+    -webkit-border-radius: 5px;   
+}
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </code></pre>
                 </section>
 
             </div>

@@ -7,7 +7,7 @@ p {
 
 .size(@w, @h) {
 	width: @w;
-	height: @h;
+	height: @h;	
 }
 
 #rect {
@@ -40,7 +40,19 @@ p {
 		display: inline;
 	}
 
-.selected {
+.doubled {
+	background-color: gray !important;
+	table {
+		margin: auto !important;
+	}
+}
+
+.less {
 	color: white;
 	background-color: lighten(black, 25%);
 }
+
+.compiled {
+	background-color: white;
+}
+
