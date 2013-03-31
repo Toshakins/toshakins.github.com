@@ -1,3 +1,9 @@
+@base: #663333;
+@complement1: spin(@base, 180);
+@complement2: darken(spin(@base, 180), 5%);
+@lighten1: lighten(@base, 15%);
+@lighten2: lighten(@base, 30%);
+
 .lead {
 	text-align: left;
 }
@@ -30,7 +36,11 @@ p {
 }
 
 .start .reveal .state-background {
-	background-image: url(../img/start.jpg);
+	background: center url(../img/start.jpg) no-repeat;
+
+}
+.reveal h1 {
+	font-size: 1.5em;
 }
 
 .header {
@@ -42,18 +52,32 @@ p {
 
 .doubled {
 	background-color: gray !important;
+	-ms-overflow-y: hidden !important;
+	    overflow-y: hidden !important;
 	table {
-		margin: auto !important;
+		margin: 0 auto !important;
+		td {
+			max-width: 400px;
+		}
 	}
 }
 
 .less {
 	color: white;
-	background-color: lighten(black, 25%);
+	background-color: black;
+	.comment {color: white}
+	.symbol {color: white}
+	.keyword {color: red}
 }
 
 .compiled {
 	background-color: white;
+	.number {color: #099 !important}
+	.attribute {color: limegreen;} 
+}
+
+.css {
+	.attribute, .number {color: limegreen;}
 }
 
 .oointro > p{
@@ -64,4 +88,29 @@ p {
 	text-align: right;
 	color: gray !important;
 	
+}
+
+
+
+.palette {
+	display: inline-block;
+	width: 180px;
+	height: 150px;
+}
+.d1 {background-color: @base;}
+.d2 {background-color: @complement1;}
+.d3 {background-color: @complement2;}
+.d4 {background-color: @lighten1;}
+.d5 {background-color: @lighten2;}
+
+.arch .reveal .state-background{
+	background: center url(../img/arch.jpg) no-repeat;
+}
+
+.xml .attribute {
+	color: green
+}
+
+a {
+	color: dodgerblue !important;
 }

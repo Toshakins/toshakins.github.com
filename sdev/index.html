@@ -67,21 +67,23 @@
                 </section>
                 <section>
                     <h1>Выход есть!</h1>
+                </section>
+                <section data-state="start">
+                    <h2 class="header">Препроцессоры</h2>
+                </section>
+                <section>
+                    <h4>НАИБОЛЕЕ ПОПУЛЯРНЫЕ</h4>
                     <div id="preprocessors">
-                        <div><img src="img/less.png"></div>
-                        <div><img src="img/stylus.png"></div>
-                        <div><img src="img/sass.gif"></div>
+                        <div><a href="http://lesscss.org/"><img src="img/less.png"></a></div>
+                        <div><a href="http://sass-lang.com/"><img src="img/stylus.png"></a></div>
+                        <div><a href="http://learnboost.github.com/stylus/"><img src="img/sass.gif"></a></div>
                     </div>
                 </section>
                 <section>
                     <img src="img/chart.png"><a href="http://bit.ly/YTmuPn">http://bit.ly/YTmuPn</a>
                 </section>
-                <section data-state="start">
-                    <h1 class="header">Вы готовы?</h1>
-                    <!-- <div class="header">lorem ipsum</div> -->
-                </section>
                 <section>
-                    <h2>Переменные <br>&amp;<br> вложенность</h2>
+                    <h2>Переменные,<br>вложенность</h2>
                 <pre><code class="doubled">
                     <table>
                         <tbody>
@@ -118,7 +120,7 @@ div p {
                                 <tr>
                                     <td class="less">
 //LESS
-.borders(@size) {
+.borders(@size: 5px) {
             border-radius: @size;
     -webkit-border-radius: @size;
 }
@@ -140,13 +142,152 @@ section {
                         </table>
                     </code></pre>
                 </section>
+                <section>
+                    <h2>Pattern matching</h2>
+                    <pre><code class="doubled">
+                            <div class="less">
+                        .mixin (dark; @color) {
+                          color: darken(@color, 10%);
+                        }
+                        .mixin (light; @color) {
+                          color: lighten(@color, 10%);
+                        }
+                        .mixin (@_; @color) {
+                          display: block;
+                        }
+                            </div>
+                        </code></pre>
+                </section>
+                <section>
+                    <h2>Pattern matching</h2>
+                    <pre><code class="doubled css">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="less">
+@switch: light;
+
+.class {
+  .mixin(@switch; #888);
+}
+
+                                        </td>
+                                        <td class="compiled">
+.class {
+  color: #a2a2a2;
+  display: block;
+}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </code></pre>
+                </section>
+
+                <section>
+                    <h2>Циклы</h2>
+                    <pre><code class="doubled cascade">
+                        <div class="less">
+// SASS
+@each $animal in puma, sea-slug, egret, salamander {
+  .#{$animal}-icon {
+    background-image: url('/images/#{$animal}.png');
+  }
+}
+                        </div>
+                    </code></pre>
+                    <code><pre>
+                        <div class="compiled">
+/* CSS */
+.puma-icon {
+  background-image: url('/images/puma.png'); }
+.sea-slug-icon {
+  background-image: url('/images/sea-slug.png'); }
+.egret-icon {
+  background-image: url('/images/egret.png'); }
+.salamander-icon {
+  background-image: url('/images/salamander.png'); }
+                        </div>
+                        </code></pre>
+                </section>
+
+                <section>
+                    <h2>Генерация палитры</h2>
+                    <pre><code class="doubled">
+                            <div class="less">
+                @base: #663333;
+                @complement1: spin(@base, 180);
+                @complement2: darken(spin(@base, 180), 5%);
+                @lighten1: lighten(@base, 15%);
+                @lighten2: lighten(@base, 30%);
+                            </div>
+                    </code></pre>
+                    <div class="d1 palette"></div>
+                    <div class="d4 palette"></div>
+                    <div class="d5 palette"></div>
+                    <div class="d2 palette"></div>
+                    <div class="d3 palette"></div>
+                </section>
+
                 <section class="oointro">
-                    <p>Однако, выдача стилей останется такой же раздутой.</p>
+                    <p>Однако выдача стилей останется как и прежде раздутой.</p>
                     <p>Нужно уменьшать размер.*</p>
                     <br>
                     <br>
                     <br>
                     <h3 class="note">*Почему?</h3>
+                </section>
+                <section data-state="arch">
+                    <h1 class="header">Архитектура</h1>
+                </section>
+                <section>
+                    <h2>Много подходов
+                        <div id="preprocessors">
+                            <div><a href="http://ru.bem.info/method/definitions/"><img src="img/arch/bem.png" alt="BEM"></a></div>
+                            <div><a href="http://www.slideshare.net/stubbornella/object-oriented-css"><h3>OOCSS</h3></a></div>
+                            <div><a href="http://smacss.com/"><img src="img/arch/smacss.png" alt="SMACSS"></a></div>
+                        </div>
+                    </h2>
+                </section>
+                <section>
+                    <p>Отличаются в деталях, но принципы общие</p>
+                    <ul>
+                        <li>Специальная файловая структура</li>
+                        <li>Повторное использование блоков</li>
+                        <li>Селекторы на теги отсутствуют (никаких <b>div.myclass</b> и <b>.myclass td</b>)</li>
+                        <li>ID не применяют</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>К примеру, БЭМ</h2>
+                    <img src="img/arch/search-block.png" alt="BEM search form">
+                </section>
+                <section>
+                    <h2>К примеру, БЭМ</h2>
+                    <pre><code>
+&lt;!-- XML -->
+&lt;block name="search-field">
+    &lt;elem name="query"/>
+    &lt;elem name="request" src="img/search.png">
+    &lt;/elem>
+&lt;/block>
+...
+
+                    </code></pre>
+                </section>
+                <section>
+                    <h2>К примеру, БЭМ
+                        <h5>Файловая структура:</h5>
+                        <pre><code>
+blocks/
+|_search-field/
+  |_query/
+  |_request/                        
+                        </code></pre>
+                        <p>Помимо, у БЭМ <b>уже</b> есть готовый <a href="https://github.com/bem/bem-tools">инструментарий</a><br>(<a href="https://github.com/bem/bemhtml">шаблонизатор</a>,
+<a href="https://github.com/veged/borschik">сборщик</a>)
+                    </p>
+                    </h2>
                 </section>
             </div>
         </div>

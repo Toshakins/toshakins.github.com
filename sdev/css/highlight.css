@@ -33,7 +33,7 @@ pre .status {
 pre .number,
 pre .hexcolor,
 pre .ruby .constant {
-  color: #099;
+  color: chartreuse;
 }
 
 pre .string,
@@ -75,7 +75,7 @@ pre .django .tag .keyword {
 pre .attribute,
 pre .variable,
 pre .lisp .body {
-  color: #008080
+  color: chartreuse
 }
 
 pre .regexp {
