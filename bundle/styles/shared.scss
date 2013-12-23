@@ -1,0 +1,86 @@
+@import "vars";
+@import "methods";
+
+.emphasis {
+	font: $emphasis-font;
+	color: $emphasis-color;
+}
+
+.btn-more {
+	display: inline-block;
+	margin: 20px 0 20px;
+	padding: 7px;
+	color: $btn-more-color;
+	clear: both;
+	a {
+		border-bottom: 1px solid $btn-more-color;
+	}
+}
+
+.btn-more__emphasized {
+	border: 3px solid $btn-more-color;
+	a {
+		border-bottom: 1px dotted $btn-more-color;
+	}
+}
+
+.soft-link {
+	border-bottom: 1px solid $header-decoration-color;
+	&:active {
+		color: $active-link-color;
+	}
+}
+
+.annotation {
+	position: relative;
+	display: block;
+	margin-bottom: 35px;
+	text-align: center;
+}
+
+//video
+.video{
+	cursor: pointer;
+	@include size($video-size...);
+	position: relative;
+	display: inline-block;
+	margin: 0 auto 17px;
+	float: none;
+	&:hover {
+		.video__btn-img {
+			@include xy($video__btn-hover-sprite...);
+		}
+	}
+}
+
+.video__btn-play {
+	position: absolute;
+	@include xy($video__btn-play-pos...);
+	@include size($video__btn-play-size...);
+	overflow: hidden;
+}
+
+.video__btn-img {
+	position: relative;
+	@include xy($video__btn-sprite...);
+}
+
+.book-img {
+	float: left;
+	margin-right: 20px;
+}
+
+.book-img-horizontal {
+	-webkit-box-shadow: 3px 7px 6px rgba(0, 0,0,0.5) ;
+	box-shadow: 3px 7px 6px rgba(0, 0,0,0.5);
+}
+
+.book-img-vertical {
+	-webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3) ;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.agressive-link {
+	color: $red;
+	border-bottom: 1px solid $red;
+}

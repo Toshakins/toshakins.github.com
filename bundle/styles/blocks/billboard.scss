@@ -1,0 +1,21 @@
+.billboard {
+	margin-bottom: 70px;
+}
+
+.billboard__header-block {
+	padding-left: 30px;
+}
+
+.billboard__header {
+	display: inline;
+	text-transform: uppercase;
+	font: $billboard-font;
+	border-bottom: 1px solid $agressive-underline; 
+}
+
+.billboard__info {
+	padding-left: 50px;
+	padding-top: 17px;
+	float: right;
+	text-align: right;
+}

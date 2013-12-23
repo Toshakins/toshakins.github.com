@@ -1,0 +1,53 @@
+//todo: write mixin
+.span25, .span50, .span33, .span66, .span75, .span100 {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	float: left;
+}
+
+.span25 {
+	width: 25%;
+}
+
+.span33 {
+	width: 33%;
+}
+
+.span50 {
+	width: 50%;
+}
+
+.span66{
+	width: 66%;
+}
+
+.span75 {
+	width: 75%;
+}
+
+.span100 {
+	width: 100%;
+}
+
+.row {
+	width: 100%;
+	clear: both;
+	position: relative;
+	&:after {
+		display: table;
+		content: " ";
+		clear: both;
+	}
+}
+
+.push25 {
+	margin-left: 25%;
+}
+
+.push12 {
+	margin-left: 12.5%;
+}

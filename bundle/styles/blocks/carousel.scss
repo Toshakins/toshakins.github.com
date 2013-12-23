@@ -1,0 +1,87 @@
+.carousel__wrapper {
+	position: relative;
+}
+
+.carousel__img-block {
+	position: relative;
+	overflow: hidden;
+}
+
+.carousel__img {
+	position: absolute;
+	display: list-item;
+	&.active {
+		display: inline;
+		position: relative;
+	}
+}
+
+
+.carousel__progress {
+	position: absolute;
+	top: 15px;
+	right: -15px;
+	font-size: 30px;
+	
+}
+
+.carousel__controls-block {
+	color: $white;
+	@include rgba(background-color, $carousel-controls-background, 0.8);
+	@include size($carousel-controls-block-size...);
+	position: absolute;
+	bottom: 5px;
+}
+
+.carousel__title-block {
+	display: inline-block;
+}
+
+.carousel__title {
+	position: relative;
+	top: 5px;
+	display: none;
+}
+
+.carousel__title.active {
+	display: inline;
+}
+
+.carousel__prev, .carousel__next {
+	position: relative;
+	top: 7px;
+	overflow: hidden;
+	margin: 0 7px 0;
+	@include size($carousel-controls-size...);
+}
+.carousel__prev {
+	float: left;
+	img{
+		@include xy($carousel-prev-pos...);
+		position: relative;
+	}
+	&:hover {
+		img {
+			@include xy($carousel-prev-hover...);
+		}
+	}
+}
+.carousel__next {
+	float: right;
+	
+	img {
+		@include xy($carousel-next-pos...);
+		position: relative;
+	}
+	&:hover {
+		img {
+			@include xy($carousel-next-hover...);
+		}
+	}
+}
+
+.carousel {
+	@include size($carousel-size...);
+	margin: 0 auto 110px;
+	text-align: center;
+}

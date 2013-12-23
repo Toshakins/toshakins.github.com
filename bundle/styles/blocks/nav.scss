@@ -1,0 +1,21 @@
+@import "../vars";
+@import "../methods";
+
+.nav {
+	color: $nav-color;
+	text-align: right;
+	font: #{rem(15px)}/#{rem(25px)} $dinpro;
+	text-transform: uppercase;
+}
+
+.nav__elem {
+	display: list-item;
+}
+
+.nav__link {
+	border: none;
+	padding: 0 5px 0;
+	&:hover{
+		background-color: $hover-nav; 
+	}
+}

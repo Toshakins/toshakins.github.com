@@ -1,0 +1,83 @@
+//Fonts
+
+$base-font-size: 16px;
+
+$pt-serif: "PT Serif Caption", "pt_serif_caption", serif;
+$dinpro: "DINPro", "dinpro-regular", sans-serif;
+$arial: "Arial", "Liberation Sans", sans-serif;
+$times-new: "Times New Roman", "Linux Libertine", serif;
+
+$section__header-font: #{rem(35px)}/#{rem(30px)} $dinpro;
+$subsection__header-font: #{rem(20px)}/#{rem(30px)} $dinpro;
+$article__header-font: #{rem(20px)}/#{rem(22px)} $times-new;
+$emphasis-font: italic #{rem(13px)}/#{rem(20px)} $pt-serif;
+$text-font: #{rem(13px)}/#{rem(20px)} $arial;
+$billboard-font: #{rem(70px)}/#{rem(90px)} $dinpro;
+
+
+//Colours
+
+//blacks
+$light-black: #4d4d4d;
+$black: #252525;
+$black-plastic: #2f2f2f;
+$near-grey: #505050;
+//greys
+$gunmetal: #4f4f4f;
+$grey: #bebebe;
+$misty: #666666;
+$dark-sand: #ebe7d6;
+$sad-day: #c4bdaf;
+
+$red: #e53c20;
+$white: white;
+
+
+//main
+
+$text-color: $near-grey;
+$active-link-color: $misty;
+$heading-color: $black-plastic;
+$emphasis-color: $light-black;
+$btn-more-color: $red;
+$header-background: $white;
+$agressive-underline: $red;
+
+$article__header-decoration-color: $red;
+$section__header-decoration-color: $sad-day;
+
+$big-carousel-size: 490px, 500px;
+$carousel-size: 275px, 190px;
+$carousel-controls-block-size: 275px, 35px;
+$carousel-controls-size: 16px, 17px;
+$carousel-prev-pos: 0, -73px;
+$carousel-prev-hover: 0, -90px;
+$carousel-next-pos:  -18px, -73px;
+$carousel-next-hover:  -18px, -90px;
+$carousel-controls-background: $black-plastic;
+
+
+//header
+$active-lang: $misty;
+$text-header-color: $black;
+$header-decoration-color: $grey; 
+
+$twitter-size: 18px, 14px;
+$twitter-pos: 0, 0;
+
+$facebook-size: 13px, 13px;
+$facebook-pos: -18px, 0;
+
+//biography
+
+$nav-color: $black;
+$hover-nav: $dark-sand;
+$aside-color: $gunmetal;
+
+
+//video
+$video-size: 140px, 100px;
+$video__btn-play-pos: 52px, 35px;
+$video__btn-play-size: 36px, 29px;
+$video__btn-sprite: 0, -14px;
+$video__btn-hover-sprite: 0, -43px;

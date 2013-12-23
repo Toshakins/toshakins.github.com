@@ -1,0 +1,43 @@
+@import "reset";
+@import "vars";
+@import "methods";
+@import "shared";
+@import "blocks/grid";
+@import "blocks/section+subsection+article";
+@import "../fonts/fonts";
+@import "header";
+@import "bio";
+@import "blocks/billboard";
+@import "media";
+
+body {
+	padding: 50px 50px 0; 
+	font: $text-font;
+	color: $text-color;
+	min-width: 1100px;
+	max-width: 1400px; 
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	display: inline-block;
+}
+
+footer {
+	border-top: 1px solid $sad-day; 
+	margin: 65px 0 45px;
+	padding-top: 18px; 
+	text-align: center;
+}
+
+.footer__title {
+	font: #{rem(20px)}/#{rem(30px)} $dinpro;
+}

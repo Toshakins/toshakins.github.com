@@ -1,0 +1,24 @@
+@mixin size($width, $height: $width) {
+	width: $width;
+	height: $height; 
+}
+
+@mixin xy($x, $y) {
+	left: $x;
+	top: $y;
+}
+
+@function rem($px, $base: $base-font-size) {
+	@return ($px / $base) * 1rem;
+}
+
+//just don't know how to calculate statically text height
+@function halved-text-height($header){
+	@if $header == "section" {@return (35 / 2) * 1px}
+	@if $header == "subsection" {@return (30 / 2) * 1px}
+}
+
+@mixin rgba($property, $color, $alpha) {
+    #{$property}:  #{$color};
+    #{$property}: rgba($color, $alpha); 
+}

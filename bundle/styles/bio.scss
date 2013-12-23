@@ -1,0 +1,22 @@
+@import "vars";
+@import "methods";
+@import "blocks/event";
+@import "blocks/nav";
+@import "blocks/big-carousel";
+
+.bio {
+		position: absolute;
+		top: 235px;
+		right: 40px;
+		width: 33%;
+}
+
+.bio__header {
+	font: $section__header-font;
+	color: $heading-color;
+	text-transform: uppercase;
+	display: inline-block;
+	padding-bottom: 2px;
+	margin-bottom: 15px;
+	border-bottom: 1px dotted $near-grey;
+}

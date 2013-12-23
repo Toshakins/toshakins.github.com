@@ -1,0 +1,39 @@
+.big-carousel {
+	padding: 0 30px 0;
+	position: relative;
+	margin-bottom: 35px;
+}
+
+.big-carousel__prev, .big-carousel__next {
+	padding-left: 20px;
+}
+
+.big-carousel__controls-block {
+	text-align: left;
+	margin-left: 48px;	
+}
+
+.big-carousel__wrapper {
+	@include size($big-carousel-size...);
+	position: relative;
+	margin: auto;
+}
+
+.big-carousel__img-block {
+
+}
+
+.big-carousel__img {
+	display: none;
+	&.active {
+		display: inline;
+	}
+}
+
+.big-carousel__progress {
+	font: italic #{rem(50px)}/#{rem(30px)} $pt-serif;
+	position: absolute;
+	left: 18px;
+	bottom: 15px; 
+	color: $white;
+}

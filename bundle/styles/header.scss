@@ -1,0 +1,63 @@
+@import "vars";
+@import "methods";
+
+header {
+	margin-bottom: 20px;
+}
+
+.social {
+	text-align: left;
+}
+
+.social__elem {
+	overflow: hidden;
+	margin-right: 20px;
+	height: 20px;
+	vertical-align: bottom;
+}
+
+//todo: write mixin
+.twitter{
+	@include size($twitter-size...);
+	img {
+		position: relative;
+		@include xy($twitter-pos...);
+	}
+}
+
+.facebook {
+	@include size($facebook-size...);
+	img {
+		position: relative;
+		@include xy($facebook-pos...);
+	}
+}
+
+.title__master {
+	margin: 0 auto 0;
+	text-align: center;
+	text-transform: uppercase;
+	font: #{rem(25px)}/#{rem(20px)} $dinpro;
+	letter-spacing: #{rem(6px)};
+}
+
+.title__slave {
+	font: #{rem(13px)}/#{rem(20px)} $dinpro;
+	letter-spacing: normal;
+}
+
+.lang {
+	float: right;
+	text-align: right;
+	text-transform: uppercase;
+}
+
+.lang__elem {
+	margin-left: 8px; 
+}
+
+.lang__elem.active .lang__link {
+		border-style: none;
+		cursor: default;
+		color: $active-lang;
+}
